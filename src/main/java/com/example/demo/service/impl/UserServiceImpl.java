@@ -1,11 +1,14 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.config.BusinessException;
+import com.example.demo.config.Constants;
 import com.example.demo.config.IdGen;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.UserModel;
 import com.example.demo.service.UserService;
+import com.example.demo.utils.RedisTemplateUtil;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +24,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    RedisTemplateUtil redisTemplateUtil;
+
     /**
      * 新增user
      *
@@ -35,6 +41,7 @@ public class UserServiceImpl implements UserService {
         user1.setPhone(user.getPhone());
         user1.setPassword(user.getPassword());
         int f = userMapper.insert(user1);
+        redisTemplateUtil.cacheHash(Constants.INSERTUSRREDISCODE1, "", user1.getId(), JSONObject.valueToString(user1));
         return f;
     }
 

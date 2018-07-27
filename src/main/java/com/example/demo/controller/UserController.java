@@ -27,7 +27,7 @@ public class UserController extends BaseController {
      * @return
      */
     @PostMapping(value = "addUser")
-    public BaseResult insertUser(@RequestBody UserModel user) {
+    public BaseResult insertUser(UserModel user) {
         int b = userService.insertUser(user);
         if (String.valueOf(b).equals(Constants.INSERT_BOOLEAN_FIRST)) {
             return sendResult200();

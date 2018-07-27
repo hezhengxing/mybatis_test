@@ -10,6 +10,8 @@ public interface Constants {
     /**
      * 插入是否成功系统参数
      */
-    public static final String INSERT_BOOLEAN_ZERO = "0";
-    public static final String INSERT_BOOLEAN_FIRST = "1";
+    String INSERT_BOOLEAN_ZERO = "0";
+    String INSERT_BOOLEAN_FIRST = "1";
+    String INSERTUSRREDISCODE = "hzx_user_insert_save";
+    String INSERTUSRREDISCODE1 = "hzx_user_insert";
 }
