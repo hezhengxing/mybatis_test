@@ -1,0 +1,37 @@
+# 环境
+spring:
+  profiles:
+    active: dev
+
+# mybatis配置
+mybatis:
+  typeAliasesPackage: com.example.demo.entity
+  mapperLocations: classpath:mapper/*.xml
+
+# mapper配置
+mapper:
+    mappers:
+          - com.example.demo.config.MyMapper
+    not-empty: false
+    identity: MYSQL
+
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+---
+
+# 相关配置
+spring:
+
+  profiles: dev
+
+  datasource:
+      url: jdbc:mysql://192.168.3.2:4306/pangolin_business_bs?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
