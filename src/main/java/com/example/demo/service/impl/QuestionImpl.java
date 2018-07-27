@@ -1,6 +1,5 @@
-package com.example.demo.service.Impl;
+package com.example.demo.service.impl;
 
-import com.example.demo.config.IdGen;
 import com.example.demo.entity.Question;
 import com.example.demo.mapper.QuestionMapper;
 import com.example.demo.model.QuestionModel;

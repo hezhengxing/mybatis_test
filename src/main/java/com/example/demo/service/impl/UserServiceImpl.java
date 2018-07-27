@@ -1,7 +1,6 @@
-package com.example.demo.service.Impl;
+package com.example.demo.service.impl;
 
 import com.example.demo.config.BusinessException;
-import com.example.demo.config.Constants;
 import com.example.demo.config.IdGen;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
