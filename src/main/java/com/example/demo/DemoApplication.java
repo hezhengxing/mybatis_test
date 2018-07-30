@@ -26,7 +26,7 @@ public class DemoApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 	public static void main(String[] args) throws UnknownHostException {
-//		SpringApplication.run(DemoApplication.class, args);
+		//打印出对应的信息
 		SpringApplication springApplication = new SpringApplication(DemoApplication.class);
 		Environment env = springApplication.run(args).getEnvironment();
 		log.info("\n----------------------------------------------------------\n\t" +

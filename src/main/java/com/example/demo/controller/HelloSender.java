@@ -23,6 +23,7 @@ public class HelloSender {
         rabbitModel.setPassword("123456");
         rabbitModel.setPhone("12358");
         rabbitTemplate.convertAndSend(Constants.RABBITTESTHEZHENGXING,rabbitModel);
+        rabbitTemplate.convertAndSend("exchange","topic.message","hello!rabbit");
+        rabbitTemplate.convertAndSend("fanoutExchange","","学到老,活到老");
     }
-
 }

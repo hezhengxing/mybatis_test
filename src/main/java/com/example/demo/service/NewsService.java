@@ -1,5 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.News;
+
+import java.util.List;
+
 /**
  * @Author:HeZhengXing
  * @Descripton:
@@ -16,4 +20,10 @@ public interface NewsService {
      * @return
      */
     boolean addNews(String title,String content,String authorId,String classifyId);
+
+    /**
+     *
+     * @return
+     */
+    List<News> findNewsAll();
 }
