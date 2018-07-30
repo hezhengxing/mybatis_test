@@ -62,13 +62,13 @@ public class RedisTemplateUtil {
     /**
      * 获取缓存String类型
      *
-     * @param prefex 前缀
+     * @param prefix 前缀
      * @param key    键
      * @return 是否成功
      */
-    public String getStringValue(String prefex, String key) {
+    public String getStringValue(String prefix, String key) {
         try {
-            String keys = prefex + key;
+            String keys = prefix + key;
             ValueOperations<String, String> valueOps = redisTemplate.opsForValue();
             return valueOps.get(keys);
         } catch (Throwable t) {
