@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import com.example.demo.config.BaeEntity;
+import com.example.demo.config.BaseEntity;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  */
 @Data
 @Entity
-public class Question extends BaeEntity{
+public class Question extends BaseEntity {
     /**
      * 问题标题
      */

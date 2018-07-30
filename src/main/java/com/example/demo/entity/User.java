@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import com.example.demo.config.BaeEntity;
+import com.example.demo.config.BaseEntity;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -13,9 +13,9 @@ import javax.persistence.Table;
  * @Modify By:
  */
 @Entity
-@Table(name = "t_user")
+@Table(name = "user")
 @Data
-public class User extends BaeEntity{
+public class User extends BaseEntity {
     private String name;
     private String password;
     private String phone;

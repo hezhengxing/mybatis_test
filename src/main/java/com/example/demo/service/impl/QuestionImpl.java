@@ -35,4 +35,15 @@ public class QuestionImpl implements QuestionService {
         int f = questionMapper.insert(question);
         return f;
     }
+
+    /**
+     * 查询问题
+     * @param questionId
+     * @return
+     */
+    @Override
+    public boolean selectQuestion(String questionId) {
+        Question question = questionMapper.selectByPrimaryKey(questionId);
+        return false;
+    }
 }

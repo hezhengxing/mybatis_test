@@ -15,7 +15,11 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  */
 @Configuration
 public class RedisConfig {
-
+    /**
+     * 序列化的作用是主要是处理redis中出现的乱码问题
+     * @param factory
+     * @return
+     */
     @Bean(name="redisTemplate")
     public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<String, String> template = new RedisTemplate<>();

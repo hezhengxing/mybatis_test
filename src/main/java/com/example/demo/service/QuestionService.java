@@ -15,4 +15,11 @@ public interface QuestionService {
      * @return
      */
     int insertQuestion(QuestionModel questionModel);
+
+    /**
+     * 查询问题
+     * @param questionId
+     * @return
+     */
+    boolean selectQuestion(String questionId);
 }

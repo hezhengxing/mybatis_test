@@ -12,6 +12,17 @@ public interface Constants {
      */
     String INSERT_BOOLEAN_ZERO = "0";
     String INSERT_BOOLEAN_FIRST = "1";
-    String INSERTUSRREDISCODE = "hzx_user_insert_save";
-    String INSERTUSRREDISCODE1 = "hzx_user_insert";
+
+    String INSERTUSRREDISCODE = "user_insert_save";
+    String INSERTUSRREDISCODE1 = "user_insert_cell";
+    /**
+     * 标签和分类
+     */
+    String INSERTUSRREDLABEL = "user_insert_label";
+    String INSERTUSRREDCLASSIFY = "user_insert_classify";
+
+    /**
+     * 消息队列
+     */
+    String RABBITTESTHEZHENGXING = "user_test_service";
 }

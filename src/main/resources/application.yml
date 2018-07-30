@@ -22,6 +22,10 @@ pagehelper:
   support-methods-arguments: true
   params: count=countSql
 
+# 端口配置
+server:
+  port: 8090
+
 ---
 
 # 相关配置
@@ -30,7 +34,7 @@ spring:
   profiles: dev
 
   datasource:
-      url: jdbc:mysql://192.168.3.2:4306/pangolin_business_bs?useUnicode=true&characterEncoding=utf8&useSSL=false
+      url: jdbc:mysql://192.168.3.2:3506/pangolin_business_bs?useUnicode=true&characterEncoding=utf8&useSSL=false
       username: root
       password: 123456
       driver-class-name: com.mysql.jdbc.Driver
@@ -40,3 +44,13 @@ spring:
      host: 192.168.3.2
      port: 4307
      password: redis123456
+  data:
+      mongodb:
+        uri: mongodb://192.168.3.2:27017
+        database: server-db-test
+  rabbitmq:
+      username: test
+      password: test
+      host: 119.23.223.206
+      virtual-host: test
+      port: 5672

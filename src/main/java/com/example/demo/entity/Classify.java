@@ -8,13 +8,14 @@ import javax.persistence.Entity;
 /**
  * @Author:HeZhengXing
  * @Descripton:
- * @Date: Created in 15:21 2018/7/27
+ * @Date: Created in 10:04 2018/7/30
  * @Modify By:
  */
-@Entity
 @Data
-public class Label extends BaseEntity {
-    private String labelName;
-    private Integer useNumber;
-    private String classifyId;
+@Entity
+public class Classify extends BaseEntity{
+    /**
+     * 标签名
+     */
+    private String name;
 }
