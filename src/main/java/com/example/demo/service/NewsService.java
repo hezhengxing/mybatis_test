@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.News;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
 
@@ -26,4 +27,14 @@ public interface NewsService {
      * @return
      */
     List<News> findNewsAll();
+
+    /**
+     *
+     * @param title
+     * @param content
+     * @param authorId
+     * @param classifyId
+     * @return
+     */
+    boolean updateNews(String newsId,String title, String content,String authorId,String classifyId);
 }

@@ -1,8 +1,10 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.Repository.NewsRepository;
+import com.example.demo.config.IdGen;
 import com.example.demo.entity.News;
 import com.example.demo.service.NewsService;
+import com.mongodb.client.result.UpdateResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,7 +51,7 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public List<News> findNewsAll() {
         Query query = new Query();
-        query.addCriteria(Criteria.where("title").is("西虹市首富"));
+//        query.addCriteria(Criteria.where("title").is("西虹市首富"));
         query.with(new Sort(Sort.Direction.DESC,"createTime"));
         List<News> list = mongoTemplate.find(query,News.class);
         log.info("查询到的数据为:"+list);
@@ -56,5 +59,19 @@ public class NewsServiceImpl implements NewsService {
             return list;
         }
         return null;
+    }
+
+    public boolean updateNews(String newsId,String title, String content, String authorId, String classifyId) {
+        if (null == newsId || "".equals(newsId)) {
+            newsId = IdGen.uuid();
+        }
+        Query query = new Query();
+        query.addCriteria(Criteria.where("id").is(newsId));
+        Update update = new Update();
+        update.set("title",title);
+        update.set("content",content);
+        UpdateResult updateResult =  mongoTemplate.upsert(query,update,News.class);
+        log.info(updateResult.toString());
+        return true;
     }
 }

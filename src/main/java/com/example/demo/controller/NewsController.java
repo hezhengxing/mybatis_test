@@ -42,4 +42,10 @@ public class NewsController extends BaseController{
         }
         return sendResult500();
     }
+
+    @PostMapping(value = "/updateNews")
+    public BaseResult updateNews(String newsId,String title,String content,String authorId,String classifyId){
+        newsService.updateNews(newsId, title, content, authorId, classifyId);
+        return sendResult200();
+    }
 }
