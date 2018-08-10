@@ -25,6 +25,11 @@ public interface UserService {
      */
     User selectUser(String userId);
 
+    /**
+     *
+     * @param userModel
+     * @return
+     */
     User selectUserLogin(String name,String password);
 
 }

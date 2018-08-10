@@ -2,6 +2,7 @@ package com.example.demo.mapper;
 
 import com.example.demo.config.MyMapper;
 import com.example.demo.entity.User;
+import com.example.demo.model.UserModel;
 
 /**
  * @Author:HeZhengXing
@@ -23,5 +24,5 @@ public interface UserMapper extends MyMapper<User> {
      * @param password
      * @return
      */
-    User selectUserLogin(String name,String password);
+    User selectUserLogin(UserModel userModel);
 }

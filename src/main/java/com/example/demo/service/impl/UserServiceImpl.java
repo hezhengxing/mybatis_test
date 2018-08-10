@@ -62,8 +62,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User selectUserLogin(String name, String password) {
-        User user = userMapper.selectUserLogin(name,password);
+    public User selectUserLogin(String name,String password) {
+        UserModel userModel = new UserModel();
+        userModel.setName(name);
+        userModel.setPassword(password);
+        User user = userMapper.selectUserLogin(userModel);
         return user;
     }
 
