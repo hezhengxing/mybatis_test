@@ -16,4 +16,12 @@ public interface UserMapper extends MyMapper<User> {
      * @return
      */
     User selectUser(String userId);
+
+    /**
+     *
+     * @param name
+     * @param password
+     * @return
+     */
+    User selectUserLogin(String name,String password);
 }

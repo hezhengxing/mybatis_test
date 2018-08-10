@@ -4,4 +4,14 @@
     <select id="selectUser" parameterType="string" resultType="com.example.demo.entity.User">
         SELECT * from t_user WHERE id = #{userId}
     </select>
+
+    <select id="selectUserLogin" parameterType="string" resultType="com.example.demo.entity.User">
+        SELECT * FROM  t_user a WHERE
+        <if test="name != null and name != ''">
+            a.name = #{name}
+        </if>
+        <if test="password != null and password != ''">
+            a.password = #{password}
+        </if>
+    </select>
 </mapper>

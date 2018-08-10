@@ -26,7 +26,7 @@ public class UserController extends BaseController {
      * @param user
      * @return
      */
-    @PostMapping(value = "addUser")
+    @PostMapping(value = "/addUser")
     public BaseResult insertUser(UserModel user) {
         int b = userService.insertUser(user);
         if (String.valueOf(b).equals(Constants.INSERT_BOOLEAN_FIRST)) {
@@ -41,7 +41,7 @@ public class UserController extends BaseController {
      * @param userId
      * @return
      */
-    @GetMapping(value = "selectUser")
+    @GetMapping(value = "/selectUser")
     public BaseResult<User> selectUser(@RequestParam(value = "userId", required = true) String userId) {
         User user = userService.selectUser(userId);
         return sendResult200(user);

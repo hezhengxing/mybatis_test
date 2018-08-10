@@ -25,4 +25,6 @@ public interface UserService {
      */
     User selectUser(String userId);
 
+    User selectUserLogin(String name,String password);
+
 }

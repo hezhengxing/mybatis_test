@@ -60,4 +60,12 @@ public class UserServiceImpl implements UserService {
             throw new BusinessException("查询用户失败");
         }
     }
+
+    @Override
+    public User selectUserLogin(String name, String password) {
+        User user = userMapper.selectUserLogin(name,password);
+        return user;
+    }
+
+
 }
